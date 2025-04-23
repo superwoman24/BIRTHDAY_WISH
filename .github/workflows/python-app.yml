@@ -17,12 +17,12 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install needed packages
+      - name: Install dependencies
         run: |
           pip install python-dotenv
 
       - name: Run your script
         env:
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}        # Secret email value yahan pass hoga
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # Secret password value yahan pass hoga
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}        # Secret email pass ho raha hai
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # Secret password pass ho raha hai
         run: python birthday.py
