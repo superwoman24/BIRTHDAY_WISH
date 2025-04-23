@@ -6,16 +6,14 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env in project root
-load_dotenv()
 
-# Email credentials
-email_user = os.getenv("EMAIL_USER")
-email_pass = os.getenv("EMAIL_PASS")
+email = os.environ.get("EMAIL_USER")       # EMAIL_USER ko fetch kar rahe hain
+password = os.environ.get("EMAIL_PASSWORD") # EMAIL_PASSWORD ko fetch kar rahe hain
 
-if not email_user or not email_pass:
-    print("❌ Email credentials not loaded. Check your .env file.")
-    exit()
+if not email or not password:
+    print("❌ Email credentials not loaded.")
+    exit(1)
+
 
 # Email subject
 subject = "🎉 HAPPY BIRTHDAY 🎉"
@@ -24,8 +22,8 @@ subject = "🎉 HAPPY BIRTHDAY 🎉"
 email_schedule = [
     {
         'email': 'pujamg2020@gmail.com',
-        'date': '11-09-2025',
-        'time': '00:01',
+        'date': '23-04-2025',
+        'time': '21:55',
         'message': 'DEAR PUJA, \nwishing you a day full of love and joy. Happy Birthday!'
     },
     {
